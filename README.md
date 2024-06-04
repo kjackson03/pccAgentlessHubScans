@@ -58,6 +58,7 @@ If the "Permission Check" will be enabled in the agentless config, the **"Micros
 
 The only workaround for now would to be remove this permission on Line 503 and **disable** the permission check in the agentless config for all subscriptions.
 
+------------------------------------------------------------------------------
 
 ### AWS
 
@@ -91,11 +92,19 @@ When this CFT is deployed as a Stack in AWS, it does the following:
         > {
         >   "Ref": "AWS::Region"
         > }
-      * Add the region name values into the Regions array
+      * On Line 181, add the region name values into the Regions array
         > "Regions": [ "us-east-1", "us-east-2" ]
 
+### Limitations
 
+Despite the additional policies in place to deny permissions to the target accounts and allow for the hub account, all of the write permissions still exist in all of the default managed policies created in this template (i.e. prismacloud1, prismacloud2, etc). Some customers may take issue with this because managed policies can theoretically be applied to any role by someone who has the appropriate access to do so. It is possible to remove the write permissions entirely from the template, except for the "Agentless Hub" policy that allows them only to the hub account. If you need this, let me know.
 
+This template also includes the permissions for "Auto Protect" (Starting on Line 748), which also includes the permissions to scan lambda functions. If function scans are in scope, but auto protecting VMs is not, it is possible for these write permissions to be removed (i.e. Create and Delete security groups, Run and Terminate EC2 instances, etc.). **There are at least 3 places where these permissions exist, so make sure you remove all of them and test the template first.** Reach out if you have questions.
 
+------------------------------------------------------------------------------
+
+### GCP
+
+Coming Soon
 
 
