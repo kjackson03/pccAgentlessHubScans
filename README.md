@@ -16,7 +16,7 @@ Both were validated by QA at some point of time, but were frozen since then - me
 
 When it comes to some customers, the standard onboarding template that is downloaded from the console will not be least permissive enough for agentless hub scanning, The templates here will help to overcome that by segregating the permissions needed to the hub subscription (specifically to the **resource group** created in the Hub subscription for the write permissions needed to create network infrastructure and the scanner VMs). The variable name where these permissions are assigned is called **"custom_agentless_resource_group_actions"**.
 
-* **For any questions regarding these templates please ask in the #pcs-agentless slack channel.
+* **For any questions regarding these templates please ask in the #pcs-agentless slack channel**.
 
 ## Getting-Started
 
