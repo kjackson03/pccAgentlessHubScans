@@ -1,6 +1,6 @@
 # Prisma Cloud Agentless Hub Org Permissions Templates
 
-The templates in this folder are to allow segregation of permissions between hub and target accounts, when onboarding an organization into Prisma Cloud.
+The onboarding templates in this folder are to create segregation of permissions between hub and target accounts, when onboarding an organization into Prisma Cloud.
 Both were validated by QA at some point of time, but were frozen since then - meaning that it is required to test them out on the current version before sending them to customers.
 
 ##Table of Contents
