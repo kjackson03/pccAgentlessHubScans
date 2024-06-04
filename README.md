@@ -87,8 +87,10 @@ When this CFT is deployed as a Stack in AWS, it does the following:
   * A stackset that creates the networking infrastructure in the hub account needed by the agentless scans (i.e. VPC, subnet, IGW, etc). This is dones in case the customer does not want Prisma Cloud creating and destroying these resources each time a scan kicks off.
     * By default, this stackset is deployed to the region selected when the onboarding template is deployed, but could easily be modified to deploy this networking infrastructure to every region being used by the customer.
     * To use the networking stack created by the stackset, you must add all of the regions where VMs/containers will be scanned.
-      * On Line 181, delete the snippet below
-        > {  "Ref": "AWS::Region"      }
+      * Remove Lines 182-184
+        > {
+        >   "Ref": "AWS::Region"
+        > }
       * Add the region name values into the Regions array
         > "Regions": [ "us-east-1", "us-east-2" ]
 
